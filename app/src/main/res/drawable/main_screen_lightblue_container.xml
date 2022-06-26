@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid
+        android:color="@color/fitus_light_blue">
+    </solid>
+    <stroke
+        android:width="0dp"
+        android:color="#424242">
+    </stroke>
+    <corners
+        android:topLeftRadius="0dip"
+        android:topRightRadius="0dip"
+        android:bottomLeftRadius="40dip"
+        android:bottomRightRadius="40dip">
+    </corners>
+</shape>
