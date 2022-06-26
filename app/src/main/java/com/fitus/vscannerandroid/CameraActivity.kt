@@ -1,136 +1,131 @@
 package com.fitus.vscannerandroid
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
-
-import androidx.camera.video.Recorder
-import androidx.camera.video.Recording
-import androidx.camera.video.VideoCapture
-import com.fitus.vscannerandroid.databinding.ActivityCameraBinding
-import java.util.concurrent.ExecutorService
-import java.util.concurrent.Executors
+import android.util.Log
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.camera.core.CameraSelector
+import androidx.camera.core.ImageCapture
+import androidx.camera.core.ImageCaptureException
+import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
-import androidx.camera.video.FallbackStrategy
-import androidx.camera.video.MediaStoreOutputOptions
-import androidx.camera.video.Quality
-import androidx.camera.video.QualitySelector
-import androidx.camera.video.VideoRecordEvent
-import androidx.core.content.PermissionChecker
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import android.content.pm.PackageManager
-import android.Manifest
-import android.os.Build
-import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
-import androidx.camera.core.*
-
+import com.fitus.vscannerandroid.databinding.ActivityCameraBinding
+import java.io.File
+import java.lang.Exception
+import java.text.SimpleDateFormat
+import java.util.*
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
 
 class CameraActivity : AppCompatActivity() {
-    private var imageCapture: ImageCapture? = null
-
-    private var videoCapture: VideoCapture<Recorder>? = null
-    private var recording: Recording? = null
-
-    private lateinit var cameraExecutor: ExecutorService
 
 //    Binding interacting
     private lateinit var binding: ActivityCameraBinding
+    private var imageCapture:ImageCapture?=null
+    private lateinit var outputDirectory: File
+    private lateinit var cameraExecutor: ExecutorService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_camera)
         binding = ActivityCameraBinding.inflate(layoutInflater)
-        // Request camera permissions
-        if (allPermissionsGranted()) {
+        setContentView(binding.root)
+        outputDirectory = getOutputDirectory()
+        cameraExecutor= Executors.newSingleThreadExecutor()
+
+        if(allPermissionGranted()){
             startCamera()
-        } else {
-            ActivityCompat.requestPermissions(
-                this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS)
+        }
+        else{
+            ActivityCompat.requestPermissions(this, Constants.REQUIRED_PERMISTIONS, Constants.REQUEST_CODE_PERMISSIONS)
         }
 
-        // Set up the listeners for take photo and video capture buttons
-        binding.imageCaptureButton.setOnClickListener { takePhoto() }
-        binding.videoCaptureButton.setOnClickListener { captureVideo() }
+        //Set event to buttons
+        binding.imageCapture.setOnClickListener(){
+            takePhoto()
+        }
+    }
 
-        cameraExecutor = Executors.newSingleThreadExecutor()
+    private fun getOutputDirectory(): File{
+        val mediaDir = externalMediaDirs.firstOrNull()?.let{ mFile ->
+            File(mFile, resources.getString(R.string.app_name)).apply { mkdirs() }
+        }
+
+        return if(mediaDir != null && mediaDir.exists()) mediaDir else filesDir
+    }
+
+    private fun takePhoto(){
+        val imageCapture= imageCapture?: return
+        val photoFile= File(outputDirectory,
+            SimpleDateFormat(Constants.FILE_NAME_FORMAT,
+                Locale.getDefault())
+                .format(System
+                    .currentTimeMillis()) + ".jpg")
+        val outputOption = ImageCapture.OutputFileOptions.Builder(photoFile).build()
+
+        imageCapture.takePicture(
+            outputOption,
+            ContextCompat.getMainExecutor(this),
+            object :ImageCapture.OnImageSavedCallback{
+                override fun onImageSaved(outputFileResults: ImageCapture.OutputFileResults) {
+
+                    val savedUri= Uri.fromFile(photoFile)
+                    val msg = "Photo saved"
+                    Toast.makeText(this@CameraActivity, "${msg} ${savedUri}", Toast.LENGTH_LONG).show()
+                }
+
+                override fun onError(exception: ImageCaptureException) {
+                    Log.e(Constants.TAG,
+                        "onError: ${exception.message}",
+                        exception)
+                }
+
+            })
+    }
+
+    private fun startCamera(){
+        val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
+        cameraProviderFuture.addListener({
+            val cameraProvider:ProcessCameraProvider = cameraProviderFuture.get()
+            val preview = Preview.Builder().build().also { mPreview-> mPreview.setSurfaceProvider(binding.viewFinder.surfaceProvider)  }
+            imageCapture = ImageCapture.Builder().build()
+            val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
+            try{
+                cameraProvider.unbindAll()
+                cameraProvider.bindToLifecycle(this, cameraSelector, preview, imageCapture)
+            }catch (e:Exception){
+                Log.d(Constants.TAG, "StartCamera Fail: ",e)
+            }
+        }, ContextCompat.getMainExecutor(this))
+
     }
 
     override fun onRequestPermissionsResult(
-        requestCode: Int, permissions: Array<String>, grantResults:
-        IntArray) {
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == REQUEST_CODE_PERMISSIONS) {
-            if (allPermissionsGranted()) {
+        if(requestCode == Constants.REQUEST_CODE_PERMISSIONS){
+            if(allPermissionGranted()){
+                // our code
                 startCamera()
-            } else {
-                Toast.makeText(this,
-                    "Permissions not granted by the user.",
-                    Toast.LENGTH_SHORT).show()
+            }
+            else{
+                Toast.makeText(this, "Permissions not granted", Toast.LENGTH_SHORT).show()
                 finish()
             }
         }
     }
-    private fun takePhoto() {}
 
-    private fun captureVideo() {}
+    private fun allPermissionGranted() =
+        Constants.REQUIRED_PERMISTIONS.all { ContextCompat.checkSelfPermission(baseContext, it) == PackageManager.PERMISSION_GRANTED }
 
-    private fun startCamera() {
-        val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
-
-        cameraProviderFuture.addListener({
-            // Used to bind the lifecycle of cameras to the lifecycle owner
-            val cameraProvider: ProcessCameraProvider = cameraProviderFuture.get()
-
-            // Preview
-            val preview = Preview.Builder()
-                .build()
-                .also {
-                    it.setSurfaceProvider(binding.viewFinder.surfaceProvider)
-                }
-
-            // Select back camera as a default
-            val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
-
-            try {
-                // Unbind use cases before rebinding
-                cameraProvider.unbindAll()
-
-                // Bind use cases to camera
-                cameraProvider.bindToLifecycle(
-                    this, cameraSelector, preview)
-
-            } catch(exc: Exception) {
-                Log.e(TAG, "Use case binding failed", exc)
-            }
-
-        }, ContextCompat.getMainExecutor(this))
-    }
-
-    private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
-        ContextCompat.checkSelfPermission(
-            baseContext, it) == PackageManager.PERMISSION_GRANTED
-    }
     override fun onDestroy() {
         super.onDestroy()
         cameraExecutor.shutdown()
-    }
-
-    companion object {
-        private const val TAG = "CameraXApp"
-        private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
-        private const val REQUEST_CODE_PERMISSIONS = 10
-        private val REQUIRED_PERMISSIONS =
-            mutableListOf (
-                Manifest.permission.CAMERA,
-                Manifest.permission.RECORD_AUDIO
-            ).apply {
-                if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.P) {
-                    add(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                }
-            }.toTypedArray()
     }
 }
