@@ -60,7 +60,7 @@
                 android:layout_height="80dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/ic_camera"
+                android:src="@drawable/ic_camerafitus"
                 app:tint="@color/fitus_dark_blue" />
 
             <TextView
@@ -90,7 +90,7 @@
                 android:layout_height="80dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/ic_add_image"
+                android:src="@drawable/ic_add_img"
                 app:tint="@color/fitus_dark_blue" />
 
             <TextView
@@ -121,7 +121,7 @@
                 android:layout_height="80dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/ic_camera"
+                android:src="@drawable/ic_book_markfitus"
                 app:tint="@color/fitus_dark_blue" />
 
             <TextView
@@ -151,7 +151,7 @@
                 android:layout_height="80dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/ic_user"
+                android:src="@drawable/ic_userfitus"
                 app:tint="@color/fitus_dark_blue" />
 
             <TextView
