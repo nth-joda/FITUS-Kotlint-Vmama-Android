@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CameraActivity"
+    android:name=".CameraActivity"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="125dp"
+        android:layout_height="100dp"
         android:background="@color/black"
         />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="420dp">
+        android:layout_height="490dp">
         <androidx.camera.view.PreviewView
             android:id="@+id/viewFinder"
             android:layout_width="match_parent"
@@ -41,8 +39,8 @@
             android:layout_height="80dp"
             android:background="@drawable/circle_cam_btn"
             android:translationZ="4dp"
-            android:layout_marginTop="70dp"
-            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:layout_gravity="center_horizontal|bottom"
             >
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/image_capture"
@@ -55,8 +53,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:translationZ="5dp"
-                android:src="@drawable/ic_camerafitus"/>
+                android:src="@drawable/ic_camerafitus"
+                android:translationZ="5dp" />
 
         </RelativeLayout>
 

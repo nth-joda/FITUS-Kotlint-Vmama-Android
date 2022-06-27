@@ -1,5 +1,6 @@
 package com.fitus.vscannerandroid
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
@@ -15,11 +16,11 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.fitus.vscannerandroid.databinding.ActivityCameraBinding
 import java.io.File
-import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
+
 
 class CameraActivity : AppCompatActivity() {
 
@@ -47,7 +48,13 @@ class CameraActivity : AppCompatActivity() {
         binding.imageCapture.setOnClickListener(){
             takePhoto()
         }
+
+        binding.backHome.setOnClickListener(){
+            val intent = Intent(this@CameraActivity, HomeActivity::class.java)
+            startActivity(intent)
+        }
     }
+
 
     private fun getOutputDirectory(): File{
         val mediaDir = externalMediaDirs.firstOrNull()?.let{ mFile ->
