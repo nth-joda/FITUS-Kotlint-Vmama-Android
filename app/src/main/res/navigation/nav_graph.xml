@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/HomeFragment"
-        android:name="com.fitus.vscannerandroid.HomeFragment"
+        android:name="com.fitus.vscannerandroid.HomeActivityTemp"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_home">
 
