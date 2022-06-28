@@ -1,25 +1,26 @@
 package com.fitus.vscannerandroid
 
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContract
 import androidx.appcompat.app.AppCompatActivity
-import androidx.camera.core.CameraSelector
-import androidx.camera.core.ImageCapture
-import androidx.camera.core.ImageCaptureException
-import androidx.camera.core.Preview
+import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.fitus.vscannerandroid.databinding.ActivityCameraBinding
+import com.theartofdev.edmodo.cropper.CropImage
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
+
 
 
 class CameraActivity : AppCompatActivity() {
@@ -30,6 +31,17 @@ class CameraActivity : AppCompatActivity() {
     private lateinit var outputDirectory: File
     private lateinit var cameraExecutor: ExecutorService
 
+    // Crop img:
+    private val cropActivityResultContracts = object : ActivityResultContract<Any?, Uri>(){
+        override fun createIntent(context: Context, input: Any?): Intent {
+            return CropImage.activity().setAspectRatio(16, 9).getIntent(this@CameraActivity)
+        }
+
+        override fun parseResult(resultCode: Int, intent: Intent?): Uri? {
+            return CropImage.getActivityResult(intent)?.uri
+        }
+
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCameraBinding.inflate(layoutInflater)
