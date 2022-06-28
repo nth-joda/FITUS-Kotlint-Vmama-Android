@@ -7,9 +7,15 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.appcompat.app.AppCompatActivity
-import androidx.camera.core.*
+import androidx.camera.core.CameraSelector
+import androidx.camera.core.ImageCapture
+import androidx.camera.core.ImageCaptureException
+import androidx.camera.core.Preview
+import androidx.camera.extensions.ExtensionMode
+import androidx.camera.extensions.ExtensionsManager
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -22,7 +28,6 @@ import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
 
-
 class CameraActivity : AppCompatActivity() {
 
 //    Binding interacting
@@ -30,6 +35,7 @@ class CameraActivity : AppCompatActivity() {
     private var imageCapture:ImageCapture?=null
     private lateinit var outputDirectory: File
     private lateinit var cameraExecutor: ExecutorService
+    private lateinit var cameraProvider: ProcessCameraProvider
 
     // Crop img:
     private val cropActivityResultContracts = object : ActivityResultContract<Any?, Uri>(){
@@ -42,6 +48,8 @@ class CameraActivity : AppCompatActivity() {
         }
 
     }
+    private lateinit var cropActivityResultLauncher : ActivityResultLauncher<Any?>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCameraBinding.inflate(layoutInflater)
@@ -93,7 +101,13 @@ class CameraActivity : AppCompatActivity() {
 
                     val savedUri= Uri.fromFile(photoFile)
                     val msg = "Photo saved"
+                    CropImage.activity(savedUri).start(this@CameraActivity);
                     Toast.makeText(this@CameraActivity, "${msg} ${savedUri}", Toast.LENGTH_LONG).show()
+//                    cropActivityResultLauncher = registerForActivityResult(cropActivityResultContracts){
+//                        it?.let{ uri ->
+//                            Log.d("URI", uri.toString())
+//                        }
+//                    }
                 }
 
                 override fun onError(exception: ImageCaptureException) {
@@ -104,22 +118,65 @@ class CameraActivity : AppCompatActivity() {
 
             })
     }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            val result = CropImage.getActivityResult(data)
+            if (resultCode == RESULT_OK) {
+                val resultUri = result.uri
+                // TODO: xu ly resultUri in OCR process
+                Toast.makeText(this@CameraActivity, "Croped Img: " + resultUri.toString(), Toast.LENGTH_SHORT).show()
+            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+                val error = result.error
+            }
+        }
+    }
 
     private fun startCamera(){
         val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
         cameraProviderFuture.addListener({
-            val cameraProvider:ProcessCameraProvider = cameraProviderFuture.get()
-            val preview = Preview.Builder().build().also { mPreview-> mPreview.setSurfaceProvider(binding.viewFinder.surfaceProvider)  }
-            imageCapture = ImageCapture.Builder().build()
-            val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
-            try{
-                cameraProvider.unbindAll()
-                cameraProvider.bindToLifecycle(this, cameraSelector, preview, imageCapture)
-            }catch (e:Exception){
-                Log.d(Constants.TAG, "StartCamera Fail: ",e)
-            }
+            cameraProvider = cameraProviderFuture.get()
+
+            val extensionsManagerFuture =
+                ExtensionsManager.getInstanceAsync(applicationContext, cameraProvider)
+            extensionsManagerFuture.addListener({
+                val extensionsManager = extensionsManagerFuture.get()
+                val preview = Preview.Builder().build().also { mPreview-> mPreview.setSurfaceProvider(binding.viewFinder.surfaceProvider)  }
+                imageCapture = ImageCapture.Builder().build()
+                var cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
+                cameraSelector = setCameraMode(extensionsManager, cameraSelector, ExtensionMode.HDR)
+                cameraSelector =
+                    setCameraMode(extensionsManager, cameraSelector, ExtensionMode.NIGHT)
+                try{
+                    cameraProvider.unbindAll()
+                    cameraProvider.bindToLifecycle(this, cameraSelector, preview, imageCapture)
+                }catch (e:Exception){
+                    Log.d(Constants.TAG, "StartCamera Fail: ",e)
+                }
+            }, ContextCompat.getMainExecutor(this))
+
+
         }, ContextCompat.getMainExecutor(this))
 
+    }
+    private fun setCameraMode(
+        extensionsManager: ExtensionsManager,
+        cameraSelector: CameraSelector,
+        mode: Int
+    ): CameraSelector {
+        if (extensionsManager.isExtensionAvailable(
+                cameraSelector,
+                mode
+            )
+        ) {
+            cameraProvider.unbindAll()
+            // Retrieve extension enabled camera selector
+            return extensionsManager.getExtensionEnabledCameraSelector(
+                cameraSelector,
+                mode
+            )
+        }
+        return cameraSelector
     }
 
     override fun onRequestPermissionsResult(
