@@ -26,4 +26,8 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="Voucher">Voucher đang được gửi đến khách hàng</string>
+    <string name="Name">Nguyen Văn A</string>
+    <string name="Phone_label">Thông qua số điện thoại</string>
+    <string name="Phone">037281297</string>
 </resources>
