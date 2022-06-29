@@ -1,7 +1,8 @@
-
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -62,4 +63,16 @@ dependencies {
 
     implementation "com.theartofdev.edmodo:android-image-cropper:2.8.0"
     implementation "com.squareup.picasso:picasso:2.5.2"
+
+    def lifecycle_version = "2.4.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
+
+    // opencv with contributions
+    implementation 'com.quickbirdstudios:opencv-contrib:4.5.2'
+
+    def coroutines_version = "1.5.2"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
+    implementation 'com.google.android.gms:play-services-mlkit-text-recognition:18.0.0'
 }

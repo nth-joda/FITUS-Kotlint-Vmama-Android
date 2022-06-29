@@ -23,6 +23,14 @@
         android:theme="@style/Theme.VscannerAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".ui.scanreceipt.ScanReceiptActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.mlkit.vision.DEPENDENCIES"
+            android:value="ocr" />
+
+        <activity
             android:name=".GoodbyeActivity"
             android:exported="false" />
         <activity
@@ -44,10 +52,9 @@
             android:name=".CameraActivity"
             android:exported="true"
             android:theme="@style/Theme.VscannerAndroid.NoActionBar" />
-
-        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-            android:theme="@style/Base.Theme.AppCompat"/> <!-- optional (needed if default theme has no action bar) -->
-
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" /> <!-- optional (needed if default theme has no action bar) -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
