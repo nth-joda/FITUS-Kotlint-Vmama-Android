@@ -31,6 +31,8 @@ class ScanReceiptActivity : AppCompatActivity() {
             //notify receipt result here
             viewModel.receipt.collectLatest { receipt ->
                 //TODO do something with the result
+
+
                 binding.tvReceipt.text = receipt.text
             }
         }

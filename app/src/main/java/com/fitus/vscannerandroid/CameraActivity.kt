@@ -9,6 +9,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContract
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageCapture
@@ -69,16 +70,36 @@ class CameraActivity : AppCompatActivity() {
         }
 
         //Set event to buttons
-        binding.imageCapture.setOnClickListener() {
-            takePhoto()
-        }
+        binding.apply {
+            imageCapture.setOnClickListener {
+                takePhoto()
+            }
 
-        binding.backHome.setOnClickListener() {
-            val intent = Intent(this@CameraActivity, HomeActivity::class.java)
-            startActivity(intent)
+            backHome.setOnClickListener {
+                val intent = Intent(this@CameraActivity, HomeActivity::class.java)
+                startActivity(intent)
+            }
+
+            //action load image from phone for convience in developing
+            btnDevLoadImage.setOnClickListener {
+                val photoPickerIntent = Intent(Intent.ACTION_PICK)
+                photoPickerIntent.type = "image/*"
+                loadImageActivityResLauncher.launch(photoPickerIntent)
+            }
         }
     }
 
+    //result after load image activity is done
+    private val loadImageActivityResLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            if (it.resultCode == RESULT_OK) {
+                it.data?.data?.let { imageUri ->
+                    //same as takePhoto result
+                    val savedUri = imageUri
+                    CropImage.activity(savedUri).start(this@CameraActivity)
+                }
+            }
+        }
 
     private fun getOutputDirectory(): File {
         val mediaDir = externalMediaDirs.firstOrNull()?.let { mFile ->
@@ -111,7 +132,7 @@ class CameraActivity : AppCompatActivity() {
 
                     val savedUri = Uri.fromFile(photoFile)
                     val msg = "Photo saved"
-                    CropImage.activity(savedUri).start(this@CameraActivity);
+                    CropImage.activity(savedUri).start(this@CameraActivity)
                     Toast.makeText(this@CameraActivity, "${msg} ${savedUri}", Toast.LENGTH_LONG)
                         .show()
 //                    cropActivityResultLauncher = registerForActivityResult(cropActivityResultContracts){
