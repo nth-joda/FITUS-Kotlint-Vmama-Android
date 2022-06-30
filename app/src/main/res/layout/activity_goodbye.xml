@@ -10,8 +10,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:orientation="vertical"
-        android:background="@color/fitus_dark_blue">
+        android:background="@color/fitus_dark_blue"
+        android:orientation="vertical">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -19,15 +20,6 @@
             android:src="@drawable/ic_vmamahoriz"
             tools:ignore="ContentDescription" />
     </LinearLayout>
-
-    <!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:orientation="vertical"-->
-<!--        android:layout_centerInParent="true"-->
-<!--        android:background="@drawable/main_screen_lightblue_container1"-->
-<!--        >-->
-<!--    </LinearLayout>-->
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -37,30 +29,33 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:background="@color/fitus_white"
-            android:layout_gravity="bottom">
+            android:layout_gravity="bottom"
+            android:background="@color/fitus_white">
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:orientation="horizontal"
                 android:layout_height="match_parent"
-                tools:ignore="UselessParent"
-                android:baselineAligned="false">
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                tools:ignore="UselessParent">
+
                 <LinearLayout
-                    android:layout_weight="0.5"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_weight="0.5"
                     android:elevation="2dp"
-                    android:paddingVertical="15dp"
-                    android:paddingHorizontal="60dp">
+                    android:paddingHorizontal="60dp"
+                    android:paddingVertical="15dp">
+
                     <ImageView
                         android:id="@+id/back_home"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_homefitus"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
-                        tools:ignore="ContentDescription"
-                        android:focusable="true" />
+                        android:focusable="true"
+                        android:src="@drawable/ic_homefitus"
+                        tools:ignore="ContentDescription" />
                 </LinearLayout>
             </LinearLayout>
         </FrameLayout>
@@ -86,7 +81,7 @@
                 android:text="@string/Voucher"
                 android:textAlignment="center"
                 android:textColor="@color/fitus_white"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -96,7 +91,7 @@
                 android:text="@string/Name"
                 android:textAlignment="center"
                 android:textColor="@color/fitus_white"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -106,7 +101,7 @@
                 android:text="@string/Phone_label"
                 android:textAlignment="center"
                 android:textColor="@color/fitus_white"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -116,7 +111,7 @@
                 android:text="@string/Phone"
                 android:textAlignment="center"
                 android:textColor="@color/fitus_white"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
         </LinearLayout>
 
 
