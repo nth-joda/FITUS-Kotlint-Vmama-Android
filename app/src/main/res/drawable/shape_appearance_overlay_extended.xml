@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style android:name="ShapeAppearanceOverlayExtended"
+    android:parent=""
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:name="cornerFamily">rounded</item>
+    <item android:name="cornerSize">20dp</item>
+    <item android:drawable="@drawable/circle_shadow_185548" />
+    <item android:name="background">
+        <item android:drawable="@drawable/circle_shadow_185548" />
+    </item>
+    <item android:name="cornerSizeTopLeft">50%</item>
+</style>
