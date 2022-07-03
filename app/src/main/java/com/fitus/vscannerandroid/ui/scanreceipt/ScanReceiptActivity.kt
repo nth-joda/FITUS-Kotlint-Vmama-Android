@@ -38,10 +38,14 @@ class ScanReceiptActivity : AppCompatActivity() {
 
                 binding.tvReceipt.text = receipt.text
                 var priceList:String = "Giá: \n";
-                for(price in receipt.prices!!){
-                    priceList = priceList + price +"\n"
-                }
+                receipt.prices?.forEach{item -> priceList = priceList + item +"\n"}
+                priceList = priceList + "Sản phẩm\n"
+                receipt.products?.forEach{item -> priceList = priceList + item +"\n"}
                 binding.tvReceipt.text = priceList
+//                for(price in receipt.prices!!){
+//                    priceList = priceList + price +"\n"
+//                }
+//                binding.tvReceipt.text = priceList
 //                binding.tvReceipt.text = binding.tvReceipt.text as String +"\n Giá nè: \n"
 //                for( price in receipt.prices!!){
 //                    binding.tvReceipt.text = binding.tvReceipt.text as String + price + "\n"

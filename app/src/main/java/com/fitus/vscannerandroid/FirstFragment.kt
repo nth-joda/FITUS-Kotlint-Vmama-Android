@@ -42,6 +42,11 @@ class FirstFragment : Fragment() {
             val intent = Intent(activity, LoginActivity::class.java)
             startActivity(intent)
         }
+
+        binding.buttonToVouchers.setOnClickListener{
+            val intent = Intent(activity, VoucherListActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onDestroyView() {
