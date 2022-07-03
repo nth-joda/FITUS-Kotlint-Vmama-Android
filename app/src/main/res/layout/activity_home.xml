@@ -21,7 +21,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="340dp"
+        android:layout_height="480dp"
         android:orientation="vertical"
         android:layout_centerInParent="true"
         android:background="@drawable/main_screen_lightblue_container"
@@ -37,18 +37,21 @@
     </LinearLayout>
 
     <GridLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_gravity="center"
         android:padding="10dp"
         android:rowCount="2"
         android:columnCount="2"
-        android:layout_marginTop="-100dp">
+        android:layout_marginTop="-100dp"
+        >
 
         <RelativeLayout
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:layout_margin="5dp"
-            android:layout_gravity="center|left"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_gravity="bottom|right"
             android:background="@drawable/main_screen_button_div"
             android:elevation="5dp"
             android:padding="20dp">
@@ -57,12 +60,12 @@
                 android:id="@+id/open_activity_camera"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="?android:attr/selectableItemBackground"/>
+                android:background="?android:attr/selectableItemBackground" />
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="10dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="10dp"
                 android:src="@drawable/ic_camerafitus"
                 app:tint="@color/fitus_dark_blue" />
@@ -70,56 +73,55 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Chụp hóa đơn"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="20dp"
-                android:textSize="20dp"
+                android:layout_marginBottom="0dp"
+                android:text="Chụp hóa đơn"
                 android:textAlignment="center"
                 android:textColor="@color/fitus_dark_blue"
-                android:textStyle="bold"/>
+                android:textSize="20dp"
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:layout_margin="5dp"
-            android:layout_gravity="center|right"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_gravity="bottom|left"
             android:orientation="vertical"
             android:background="@drawable/main_screen_button_div"
             android:elevation="5dp"
             android:padding="20dp">
+
             <Button
                 android:id="@+id/open_activity_imglibrary"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="?android:attr/selectableItemBackground"/>
+                android:background="?android:attr/selectableItemBackground" />
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
                 android:src="@drawable/ic_add_img"
                 app:tint="@color/fitus_dark_blue" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Ảnh có sẵn"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="20dp"
-                android:textSize="20dp"
+                android:layout_marginBottom="8dp"
+                android:text="Ảnh có sẵn"
                 android:textAlignment="center"
                 android:textColor="@color/fitus_dark_blue"
-                android:textStyle="bold"/>
+                android:textSize="20dp"
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
 
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:layout_margin="5dp"
-            android:layout_gravity="center|left"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_gravity="top|right"
             android:orientation="vertical"
             android:background="@drawable/main_screen_button_div"
             android:elevation="5dp"
@@ -132,7 +134,7 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:src="@drawable/ic_book_markfitus"
@@ -143,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:text="Lịch sử HĐ"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="8dp"
                 android:textSize="20dp"
                 android:textAlignment="center"
                 android:textColor="@color/fitus_dark_blue"
@@ -152,10 +154,9 @@
 
         <RelativeLayout
 
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:layout_margin="5dp"
-            android:layout_gravity="center|right"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_gravity="top|left"
             android:orientation="vertical"
             android:background="@drawable/main_screen_button_div"
             android:elevation="5dp"
@@ -167,9 +168,9 @@
                 android:background="?android:attr/selectableItemBackground"/>
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="60dp"
                 android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="8dp"
                 android:src="@drawable/ic_userfitus"
                 app:tint="@color/fitus_dark_blue" />
 
@@ -178,7 +179,7 @@
                 android:layout_height="wrap_content"
                 android:text="Hồ sơ cá nhân"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="0dp"
                 android:textSize="20dp"
                 android:textAlignment="center"
                 android:textColor="@color/fitus_dark_blue"

@@ -7,6 +7,8 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import com.fitus.vscannerandroid.Constants
 import com.fitus.vscannerandroid.databinding.ActivityScanReceiptBinding
@@ -27,6 +29,7 @@ class ScanReceiptActivity : AppCompatActivity() {
         val imageUri = intent.extras?.get(Constants.INTENT_EXTRA_IMAGE_URI) as Uri
         val bitmap = convertUriToBitmap(imageUri)
 
+        binding.scanningImgPreview.setImageURI(imageUri)
         repeatLifecycleFlow {
             //notify receipt result here
             viewModel.receipt.collectLatest { receipt ->
@@ -34,6 +37,23 @@ class ScanReceiptActivity : AppCompatActivity() {
 
 
                 binding.tvReceipt.text = receipt.text
+                var priceList:String = "Giá: \n";
+                for(price in receipt.prices!!){
+                    priceList = priceList + price +"\n"
+                }
+                binding.tvReceipt.text = priceList
+//                binding.tvReceipt.text = binding.tvReceipt.text as String +"\n Giá nè: \n"
+//                for( price in receipt.prices!!){
+//                    binding.tvReceipt.text = binding.tvReceipt.text as String + price + "\n"
+//                }
+
+
+                if(!binding.tvReceipt.text.equals("")){
+                    binding.progressBar.isVisible = false;
+                    Toast.makeText(this@ScanReceiptActivity, "Scan done", Toast.LENGTH_SHORT).show()
+                }
+
+
             }
         }
 
