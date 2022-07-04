@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.fitus.vscannerandroid.bussiness.scanreceipt.ExtractReceiptUC
 import com.fitus.vscannerandroid.bussiness.scanreceipt.OCRUseCase
+import com.fitus.vscannerandroid.bussiness.scanreceipt.ProcessExtractedReceiptUC
 import com.fitus.vscannerandroid.bussiness.scanreceipt.ProcessImageUC
 import com.fitus.vscannerandroid.data.LoginDataSource
 import com.fitus.vscannerandroid.data.LoginRepository
@@ -20,7 +21,8 @@ class ScanReceiptViewModelFactory(val application: Application) :
                 application,
                 processImageUC = ProcessImageUC(),
                 ocrUC = OCRUseCase(application),
-                extractReceiptUC = ExtractReceiptUC()
+                extractReceiptUC = ExtractReceiptUC(),
+                processExtractedReceiptUC = ProcessExtractedReceiptUC(),
             ) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
