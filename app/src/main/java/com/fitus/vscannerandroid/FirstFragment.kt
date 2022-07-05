@@ -43,8 +43,16 @@ class FirstFragment : Fragment() {
             startActivity(intent)
         }
 
+
         binding.buttonToVouchers.setOnClickListener{
             val intent = Intent(activity, VoucherListActivity::class.java)
+
+            startActivity(intent)
+        }
+
+        binding.buttonToProduct.setOnClickListener {
+            val intent = Intent(activity, VoucherScreen::class.java)
+
             startActivity(intent)
         }
     }

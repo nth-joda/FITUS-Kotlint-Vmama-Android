@@ -30,4 +30,20 @@
     <string name="Name">Nguyen Văn A</string>
     <string name="Phone_label">Thông qua số điện thoại</string>
     <string name="Phone">037281297</string>
+    <string name="_2_000_001_10_vnd">2.000.001\n vnd</string>
+    <string name="t_n_s_n_ph_m">Tên sản phẩm</string>
+    <string name="t_n_s_n_ph_m_s_07_n">Tên sản phẩm số 07 \n</string>
+    <string name="gi_ti_n">Giá tiền</string>
+    <string name="t_n_s_n_ph_m_s_01_10">Tên sản phẩm số 01 \n</string>
+    <string name="_2_000_003_10_vnd">2.000.003\n vnd</string>
+    <string name="_2_000_000_10_vnd">2.000.000 \n vnd</string>
+    <string name="t_n_s_n_ph_m_s_05_n">Tên sản phẩm số 05 \n</string>
+    <string name="_2_000_006_10_vnd">2.000.006\n vnd</string>
+    <string name="t_n_s_n_ph_m_s_02_10">Tên sản phẩm số 02\n</string>
+    <string name="t_n_s_n_ph_m_s_03_n">Tên sản phẩm số 03 \n</string>
+    <string name="_2_000_002_10_vnd">2.000.002\n vnd</string>
+    <string name="t_n_s_n_ph_m_s_04_n">Tên sản phẩm số 04 \n</string>
+    <string name="_2_000_004_10_vnd">2.000.004\n vnd</string>
+    <string name="t_n_s_n_ph_m_s_06_n">Tên sản phẩm số 06 \n</string>
+    <string name="_2_000_005_10_vnd">2.000.005\n vnd</string>
 </resources>

@@ -75,4 +75,5 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
 
     implementation 'com.google.android.gms:play-services-mlkit-text-recognition:18.0.0'
+
 }

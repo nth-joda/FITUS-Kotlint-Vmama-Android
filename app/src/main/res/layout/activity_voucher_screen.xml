@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".VoucherScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/fitus_dark_blue"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_vmamahoriz"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main_screen_lightblue_container1">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:stretchColumns="0,30">
+
+            <TableRow
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/Product"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/main_screen_lightblue_container1"
+                    android:text="@string/t_n_s_n_ph_m"
+                    android:textColor="#fff"
+                    android:textSize="50px"
+                    android:textStyle="normal" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/Price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:background="@drawable/main_screen_lightblue_container1"
+                    android:text="@string/gi_ti_n"
+                    android:textColor="#fff"
+                    android:textSize="50px"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/product1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_column="0"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/bg_voucher"
+                    android:text="@string/t_n_s_n_ph_m_s_01_10"
+                    android:textColor="#025395"
+                    android:textSize="40px"
+                    android:textStyle="normal" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/price1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_column="1"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/bg_voucher"
+                    android:text="@string/_2_000_000_10_vnd"
+                    android:textColor="#025395"
+                    android:textSize="40px"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/product2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_column="0"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/bg_voucher"
+                    android:text="@string/t_n_s_n_ph_m_s_02_10"
+                    android:textColor="#025395"
+                    android:textSize="40px"
+                    android:textStyle="normal" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/price2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_column="1"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/bg_voucher"
+                    android:text="@string/_2_000_001_10_vnd"
+                    android:textColor="#025395"
+                    android:textSize="40px"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/product3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_column="0"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/bg_voucher"
+                    android:text="@string/t_n_s_n_ph_m_s_03_n"
+                    android:textColor="#025395"
+                    android:textSize="40px"
+                    android:textStyle="normal" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/price3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_column="1"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/bg_voucher"
+                    android:text="@string/_2_000_002_10_vnd"
+                    android:textColor="#025395"
+                    android:textSize="40px"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/product4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_column="0"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/bg_voucher"
+                    android:text="@string/t_n_s_n_ph_m_s_04_n"
+                    android:textColor="#025395"
+                    android:textSize="40px"
+                    android:textStyle="normal" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/price4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_column="1"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/bg_voucher"
+                    android:text="@string/_2_000_003_10_vnd"
+                    android:textColor="#025395"
+                    android:textSize="40px"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/product5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_column="0"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/bg_voucher"
+                    android:text="@string/t_n_s_n_ph_m_s_05_n"
+                    android:textColor="#025395"
+                    android:textSize="40px"
+                    android:textStyle="normal" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/price5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_column="1"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/bg_voucher"
+                    android:text="@string/_2_000_004_10_vnd"
+                    android:textColor="#025395"
+                    android:textSize="40px"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/product6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_column="0"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/bg_voucher"
+                    android:text="@string/t_n_s_n_ph_m_s_06_n"
+                    android:textColor="#025395"
+                    android:textSize="40px"
+                    android:textStyle="normal" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/price6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_column="1"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/bg_voucher"
+                    android:text="@string/_2_000_005_10_vnd"
+                    android:textColor="#025395"
+                    android:textSize="40px"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/product7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_column="0"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/bg_voucher"
+                    android:text="@string/t_n_s_n_ph_m_s_07_n"
+                    android:textColor="#025395"
+                    android:textSize="40px"
+                    android:textStyle="normal" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/price7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_column="1"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/bg_voucher"
+                    android:text="@string/_2_000_006_10_vnd"
+                    android:textColor="#025395"
+                    android:textSize="40px"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+        </TableLayout>
+
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="bottom"
+            android:background="@color/fitus_white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                tools:ignore="UselessParent">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:elevation="2dp"
+                    android:paddingVertical="15dp">
+
+                    <ImageView
+                        android:id="@+id/cancel"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:src="@drawable/ic_cancelfitus"
+                        android:contentDescription="TODO"
+                        android:focusable="true" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:elevation="2dp"
+                    android:paddingVertical="15dp">
+
+                    <ImageView
+                        android:id="@+id/video_capture"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:src="@drawable/ic_add_img"
+                        android:contentDescription="TODO"
+                        android:focusable="true" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:elevation="2dp"
+                    android:paddingVertical="15dp">
+
+                    <ImageView
+                        android:id="@+id/edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:src="@drawable/ic_editfitus"
+                        android:contentDescription="TODO"
+                        android:focusable="true" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:elevation="2dp"
+                    android:paddingVertical="15dp">
+
+                    <ImageView
+                        android:id="@+id/done"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:src="@drawable/ic_done_round_fillfitus"
+                        android:contentDescription="TODO"
+                        android:focusable="true" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="end|center">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_image"
+                app:backgroundTint="@color/white"
+                app:tint="@color/fitus_dark_blue"
+                />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
+
+</LinearLayout>
+
