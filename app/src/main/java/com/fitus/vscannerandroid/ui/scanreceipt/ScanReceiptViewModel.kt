@@ -8,6 +8,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.fitus.vscannerandroid.bussiness.scanreceipt.ExtractReceiptUC
 import com.fitus.vscannerandroid.bussiness.scanreceipt.OCRUseCase
+import com.fitus.vscannerandroid.bussiness.scanreceipt.ProcessExtractedReceiptUC
 import com.fitus.vscannerandroid.bussiness.scanreceipt.ProcessImageUC
 import com.fitus.vscannerandroid.data.model.Receipt
 import kotlinx.coroutines.Dispatchers
@@ -17,10 +18,11 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class ScanReceiptViewModel(
-    private val app: Application,
+    app: Application,
     private val processImageUC: ProcessImageUC,
     private val ocrUC: OCRUseCase,
-    private val extractReceiptUC: ExtractReceiptUC
+    private val extractReceiptUC: ExtractReceiptUC,
+    private val processExtractedReceiptUC: ProcessExtractedReceiptUC,
 ) : AndroidViewModel(app) {
 
     //reactive data structure to notify background process result
@@ -33,7 +35,8 @@ class ScanReceiptViewModel(
             val processedBitmap = processImageUC(bitmap)
             val visionText = ocrUC(processedBitmap)
             //notify result when process done
-            _receipt.value = extractReceiptUC(visionText)
+            val extracted = extractReceiptUC(visionText)
+            _receipt.value = processExtractedReceiptUC(extracted)
         }
     }
 

@@ -8,14 +8,16 @@ class ExtractReceiptUC {
 
     suspend operator fun invoke(visionText: Text): Receipt {
         try {
-
             val textBlocksLeft = mutableListOf<Text.TextBlock>()
             val textBlocksRight = mutableListOf<Text.TextBlock>()
             val textBlocksMiddle = mutableListOf<Text.TextBlock>()
             val textBlocks = visionText.textBlocks
 
             splitData(textBlocks, textBlocksLeft, textBlocksRight)
-            splitData(textBlocksRight, textBlocksMiddle, textBlocksRight)
+            try {
+                splitData(textBlocksRight, textBlocksMiddle, textBlocksRight)
+            } catch (e: Exception) {
+            }
 
             val productName = getProductName(textBlocksLeft)
             val prices = getProductPrices(textBlocksRight)
