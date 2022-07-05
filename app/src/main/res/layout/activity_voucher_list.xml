@@ -40,34 +40,82 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="20dp">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp">
 
-                    <RelativeLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="150dp"
-                        android:layout_marginTop="9dp"
-                        android:layout_marginRight="18dp"
-                        android:background="@drawable/voucher_container"></RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="150dp"
+                                android:layout_marginTop="9dp"
+                                android:layout_marginRight="18dp"
+                                android:background="@drawable/voucher_container"></RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center">
+
+                                <androidx.appcompat.widget.AppCompatButton
+                                    android:id="@+id/image_capture"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/circle_cam_btn"
+                                    android:text="?"
+                                    android:textColor="#ccc"
+                                    android:textSize="20dp" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_gravity="center">
-
-                        <androidx.appcompat.widget.AppCompatButton
-                            android:id="@+id/image_capture"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/circle_cam_btn"
-                            android:text="?"
-                            android:textColor="#ccc"
-                            android:textSize="20dp" />
+                            android:layout_height="150dp">
+
+                            <RelativeLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="150dp"
+                                android:layout_marginTop="9dp"
+                                android:layout_marginRight="18dp"
+                                android:background="@drawable/voucher_container"></RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center">
+
+                                <androidx.appcompat.widget.AppCompatButton
+                                    android:id="@+id/image_capture2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/circle_cam_btn"
+                                    android:text="?"
+                                    android:textColor="#ccc"
+                                    android:textSize="20dp" />
+                            </LinearLayout>
+                        </RelativeLayout>
                     </LinearLayout>
-                </RelativeLayout>
+                </LinearLayout>
+
+
+
+
+
+
             </ScrollView>
         </LinearLayout>
     </LinearLayout>
