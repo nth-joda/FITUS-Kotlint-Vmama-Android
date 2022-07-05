@@ -45,8 +45,8 @@ class CameraActivity : AppCompatActivity() {
             return CropImage.activity().setAspectRatio(16, 9).getIntent(this@CameraActivity)
         }
 
-        override fun parseResult(resultCode: Int, intent: Intent?): Uri? {
-            return CropImage.getActivityResult(intent)?.uri
+        override fun parseResult(resultCode: Int, intent: Intent?): Uri {
+            return CropImage.getActivityResult(intent).uri
         }
 
     }

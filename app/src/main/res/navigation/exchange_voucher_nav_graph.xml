@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/exchange_voucher_nav_graph"
+    app:startDestination="@id/cameraFragment">
+
+    <fragment
+        android:id="@+id/cropImageFragment"
+        android:name="com.fitus.vscannerandroid.ui.exchangevoucher.cropimage.CropImageFragment"
+        android:label="fragment_crop_image"
+        tools:layout="@layout/fragment_crop_image" >
+        <action
+            android:id="@+id/action_cropImageFragment_to_editReceiptFragment"
+            app:destination="@id/editReceiptFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editReceiptFragment"
+        android:name="com.fitus.vscannerandroid.ui.exchangevoucher.editreceipt.EditReceiptFragment"
+        android:label="EditReceiptFragment" />
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.fitus.vscannerandroid.ui.exchangevoucher.camera.CameraFragment"
+        android:label="CameraFragment" >
+        <action
+            android:id="@+id/action_cameraFragment_to_cropImageFragment"
+            app:destination="@id/cropImageFragment" />
+    </fragment>
+</navigation>

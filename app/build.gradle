@@ -67,6 +67,8 @@ dependencies {
     def lifecycle_version = "2.4.1"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+
 
     // opencv with contributions
     implementation 'com.quickbirdstudios:opencv-contrib:4.5.2'
@@ -76,4 +78,10 @@ dependencies {
 
     implementation 'com.google.android.gms:play-services-mlkit-text-recognition:18.0.0'
 
+    def nav_version = "2.5.0-rc02"
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    def image_cropper_version = "4.3.0"
+    implementation "com.github.CanHub:Android-Image-Cropper:$image_cropper_version"
 }

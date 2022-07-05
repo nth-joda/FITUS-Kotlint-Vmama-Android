@@ -1,4 +1,4 @@
-package com.fitus.vscannerandroid.ui.scanreceipt
+package com.fitus.vscannerandroid.ui.exchangevoucher
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
@@ -7,17 +7,14 @@ import com.fitus.vscannerandroid.bussiness.scanreceipt.ExtractReceiptUC
 import com.fitus.vscannerandroid.bussiness.scanreceipt.OCRUseCase
 import com.fitus.vscannerandroid.bussiness.scanreceipt.ProcessExtractedReceiptUC
 import com.fitus.vscannerandroid.bussiness.scanreceipt.ProcessImageUC
-import com.fitus.vscannerandroid.data.LoginDataSource
-import com.fitus.vscannerandroid.data.LoginRepository
-import com.fitus.vscannerandroid.ui.login.LoginViewModel
 
-class ScanReceiptViewModelFactory(val application: Application) :
+class ExchangeVoucherViewModelFactory(val application: Application):
     ViewModelProvider.Factory {
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(ScanReceiptViewModel::class.java)) {
-            return ScanReceiptViewModel(
+        if (modelClass.isAssignableFrom(ExchangeVoucherViewModel::class.java)) {
+            return ExchangeVoucherViewModel(
                 application,
                 processImageUC = ProcessImageUC(),
                 ocrUC = OCRUseCase(application),
