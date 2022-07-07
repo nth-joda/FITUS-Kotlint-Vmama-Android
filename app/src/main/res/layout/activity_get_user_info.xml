@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".GetUserInfo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/fitus_dark_blue"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_vmamahoriz" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="605dp"
+        android:background="@color/fitus_light_blue"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="Họ Tên"
+                    android:textColor="@color/fitus_white"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/user_name"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:inputType="text"
+                    android:minHeight="40dp"
+                    android:selectAllOnFocus="true"
+                    android:textColor="#3084D7"
+                    android:textColorHint="#3084D7"
+                    app:counterEnabled="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="SDT"
+                    android:textColor="@color/fitus_white"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/user_phone"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="34dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:inputType="phone"
+                    android:minHeight="40dp"
+                    android:selectAllOnFocus="true"
+                    android:textColor="#3084D7"
+                    android:textColorHint="#3084D7"
+                    app:counterEnabled="true" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:paddingTop="15dp"
+                android:paddingBottom="10dp"
+                android:text="Voucher đã chọn"
+                android:textColor="@color/fitus_white"
+                android:textSize="20dp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp">
+
+                            <RelativeLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="150dp"
+                                android:layout_marginTop="9dp"
+                                android:layout_marginRight="18dp"
+                                android:background="@drawable/voucher_container" />
+
+                            <LinearLayout
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center">
+
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </ScrollView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="Nhãn hàng cung cấp:"
+                        android:textColor="@color/fitus_white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="VMama Demo"
+                        android:textColor="@color/fitus_white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:text="Hạn sử dụng:"
+                        android:textColor="@color/fitus_white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="29/02/2023"
+                        android:textColor="@color/fitus_white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Nội dung:"
+                        android:textColor="@color/fitus_white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:text="Với hóa đơn từ 100$ trong đó khách hàng có mua một chiếc tất với giá gấp đôi, khách hàng sẽ được tặng kèm thêm 1 chiếc tất cùng bộ."
+                        android:textColor="@color/fitus_white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="bottom"
+        android:background="@color/fitus_white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:elevation="2dp"
+                android:paddingVertical="15dp">
+
+                <ImageView
+                    android:id="@+id/cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:contentDescription="TODO"
+                    android:focusable="true"
+                    android:src="@drawable/ic_cancelfitus" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:elevation="2dp"
+                android:paddingVertical="15dp">
+
+                <ImageView
+                    android:id="@+id/done"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:contentDescription="TODO"
+                    android:focusable="true"
+                    android:src="@drawable/ic_done_round_fillfitus" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>
+
+
