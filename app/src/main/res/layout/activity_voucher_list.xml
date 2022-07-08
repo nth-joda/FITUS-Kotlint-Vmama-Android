@@ -6,34 +6,40 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".VoucherListActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:orientation="vertical"
-        android:background="@color/fitus_dark_blue">
+        android:background="@color/fitus_dark_blue"
+        android:orientation="vertical">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:src="@drawable/ic_vmamahoriz"/>
+            android:src="@drawable/ic_vmamahoriz" />
+
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/fitus_light_blue">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textColor="@color/fitus_white"
                 android:paddingTop="15dp"
                 android:paddingBottom="10dp"
-                android:textSize="20dp"
-                android:text="Các voucher phù hợp"/>
+                android:text="Các voucher phù hợp"
+                android:textAlignment="center"
+                android:textColor="@color/fitus_white"
+                android:textSize="20dp" />
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -44,81 +50,74 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="150dp">
 
-                            <RelativeLayout
-                                android:layout_width="fill_parent"
-                                android:layout_height="150dp"
-                                android:layout_marginTop="9dp"
-                                android:layout_marginRight="18dp"
-                                android:background="@drawable/voucher_container"></RelativeLayout>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="5"
+                        tools:listitem="@layout/layout_vouchers" />
 
-                            <LinearLayout
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_alignParentRight="true"
-                                android:layout_centerVertical="true"
-                                android:layout_gravity="center">
-
-                                <androidx.appcompat.widget.AppCompatButton
-                                    android:id="@+id/image_capture"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@drawable/circle_cam_btn"
-                                    android:text="?"
-                                    android:textColor="#ccc"
-                                    android:textSize="20dp" />
-                            </LinearLayout>
-                        </RelativeLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="150dp">
-
-                            <RelativeLayout
-                                android:layout_width="fill_parent"
-                                android:layout_height="150dp"
-                                android:layout_marginTop="9dp"
-                                android:layout_marginRight="18dp"
-                                android:background="@drawable/voucher_container"></RelativeLayout>
-
-                            <LinearLayout
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_alignParentRight="true"
-                                android:layout_centerVertical="true"
-                                android:layout_gravity="center">
-
-                                <androidx.appcompat.widget.AppCompatButton
-                                    android:id="@+id/image_capture2"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@drawable/circle_cam_btn"
-                                    android:text="?"
-                                    android:textColor="#ccc"
-                                    android:textSize="20dp" />
-                            </LinearLayout>
-                        </RelativeLayout>
-                    </LinearLayout>
                 </LinearLayout>
-
-
-
-
 
 
             </ScrollView>
         </LinearLayout>
+
     </LinearLayout>
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="bottom"
+        android:background="@color/fitus_white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:elevation="2dp"
+                android:paddingVertical="15dp">
+
+                <ImageView
+                    android:id="@+id/cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:contentDescription="TODO"
+                    android:focusable="true"
+                    android:src="@drawable/ic_cancelfitus" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:elevation="2dp"
+                android:paddingVertical="15dp">
+
+                <ImageView
+                    android:id="@+id/done"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:contentDescription="TODO"
+                    android:focusable="true"
+                    android:src="@drawable/ic_done_round_fillfitus" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
 
 </LinearLayout>
