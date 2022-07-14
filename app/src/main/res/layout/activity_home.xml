@@ -82,40 +82,7 @@
                 android:textStyle="bold" />
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            android:layout_gravity="bottom|left"
-            android:orientation="vertical"
-            android:background="@drawable/main_screen_button_div"
-            android:elevation="5dp"
-            android:padding="20dp">
 
-            <Button
-                android:id="@+id/open_activity_imglibrary"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="?android:attr/selectableItemBackground" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="10dp"
-                android:src="@drawable/ic_add_img"
-                app:tint="@color/fitus_dark_blue" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="8dp"
-                android:text="Ảnh có sẵn"
-                android:textAlignment="center"
-                android:textColor="@color/fitus_dark_blue"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-        </RelativeLayout>
 
         <RelativeLayout
 
@@ -166,11 +133,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="?android:attr/selectableItemBackground"/>
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginBottom="10dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="10dp"
                 android:src="@drawable/ic_userfitus"
                 app:tint="@color/fitus_dark_blue" />
 
