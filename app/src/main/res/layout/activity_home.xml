@@ -12,11 +12,13 @@
         android:layout_height="60dp"
         android:orientation="vertical"
         android:background="@color/fitus_dark_blue">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:src="@drawable/ic_vmamahoriz"/>
+
     </LinearLayout>
 
     <LinearLayout
