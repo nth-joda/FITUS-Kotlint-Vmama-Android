@@ -1,6 +1,7 @@
 package com.fitus.vscannerandroid.ui.login
 
 import android.app.Activity
+import android.content.Intent
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -12,6 +13,8 @@ import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.Toast
+import com.fitus.vscannerandroid.ChangePassword
+import com.fitus.vscannerandroid.ForgotPassword
 import com.fitus.vscannerandroid.databinding.ActivityLoginBinding
 
 import com.fitus.vscannerandroid.R
@@ -27,6 +30,10 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.btnForgotPassword?.setOnClickListener {
+            val intent = Intent(this@LoginActivity, ForgotPassword::class.java)
+            startActivity(intent)
+        }
         val username = binding.username
         val password = binding.password
         val login = binding.login
