@@ -17,6 +17,11 @@ class ChangePasswordOtp : AppCompatActivity() {
         binding = ActivityChangePassWordOtpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.btnAccept.setOnClickListener {
+            val intent = Intent(this@ChangePasswordOtp, ResetPassword::class.java)
+            startActivity(intent)
+        }
+
 setupOTPinputs();
     }
     private fun setupOTPinputs() {
