@@ -25,12 +25,13 @@
                 android:paddingBottom="10dp"
                 android:scrollHorizontally="true"
                 android:text="Tên voucher 01"
+                android:textStyle="bold"
                 android:textColor="#025395"
                 android:textSize="20dp" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="2.5dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="20dp"

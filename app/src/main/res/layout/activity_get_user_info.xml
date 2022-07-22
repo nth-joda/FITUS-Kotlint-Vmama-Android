@@ -68,6 +68,7 @@
                         android:paddingTop="15dp"
                         android:paddingBottom="10dp"
                         android:text="Họ Tên"
+                        android:textStyle="bold"
                         android:textColor="@color/fitus_dark_blue"
                         android:textSize="18dp" />
 
@@ -98,6 +99,7 @@
                         android:paddingTop="15dp"
                         android:paddingBottom="10dp"
                         android:text="SĐT"
+                        android:textStyle="bold"
                         android:textColor="@color/fitus_dark_blue"
                         android:textSize="18dp" />
 
@@ -150,6 +152,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tên gói quà:"
+                        android:textStyle="bold"
                         android:textColor="@color/fitus_dark_blue"
                         android:textSize="18sp" />
 
@@ -171,6 +174,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Bao gồm: "
+                        android:textStyle="bold"
                         android:textColor="@color/fitus_dark_blue"
                         android:textSize="18sp" />
 
@@ -199,6 +203,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Nhãn hàng cung cấp:"
+                        android:textStyle="bold"
                         android:textColor="@color/fitus_dark_blue"
                         android:textSize="18sp" />
 
@@ -220,6 +225,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Hạn sử dụng:"
+                        android:textStyle="bold"
                         android:textColor="@color/fitus_dark_blue"
                         android:textSize="18sp" />
 
@@ -241,6 +247,7 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:text="Nội dung:"
+                        android:textStyle="bold"
                         android:textColor="@color/fitus_dark_blue"
                         android:textSize="18sp" />
                 </LinearLayout>

@@ -50,7 +50,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="40dp"
-
                 android:text="Xin hãy nhập mã bảo mật đã được gửi tới email của bạn.   "
                 android:textAlignment="center"
                 android:textColor="#025395"
