@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".VoucherListActivity">
+    tools:context=".GiftList">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,60 +18,50 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:src="@drawable/ic_vmamahoriz" />
-
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/main_screen_lightblue_container">
+        android:layout_height="605dp"
+        android:background="@drawable/main_screen_lightblue_container1"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/calendarView"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_calendar"
+            android:textAllCaps="false"
+            android:text="Các quà tặng phù hợp"
+            android:textColor="#fff"
+            android:textSize="20dp" />
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:paddingHorizontal="20dp">
 
-            <TextView
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="15dp"
-                android:paddingBottom="10dp"
-                android:text="Các voucher phù hợp"
-                android:textAlignment="center"
-                android:textColor="@color/fitus_white"
-                android:textSize="20dp" />
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="5"
+                tools:listitem="@layout/layout_gifts" />
+        </ScrollView>
 
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        tools:itemCount="5"
-                        tools:listitem="@layout/layout_vouchers" />
-
-                </LinearLayout>
-
-
-            </ScrollView>
-        </LinearLayout>
 
     </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_gravity="bottom"
+        android:layout_height="wrap_content"
         android:background="@color/fitus_white">
 
         <LinearLayout
@@ -86,34 +76,33 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
                 android:elevation="2dp"
-                android:paddingVertical="15dp">
+                android:paddingVertical="1dp">
 
                 <ImageView
                     android:id="@+id/cancel"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
-                    android:contentDescription="TODO"
+                    android:contentDescription="Back"
                     android:focusable="true"
                     android:src="@drawable/ic_cancelfitus" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="60dp"
                 android:layout_weight="0.5"
                 android:elevation="2dp"
-                android:paddingVertical="15dp">
+                android:paddingVertical="1dp">
 
                 <ImageView
                     android:id="@+id/done"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
-                    android:contentDescription="TODO"
+                    android:contentDescription="Accept"
                     android:focusable="true"
                     android:src="@drawable/ic_done_round_fillfitus" />
             </LinearLayout>

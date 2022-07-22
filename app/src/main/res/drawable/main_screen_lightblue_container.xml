@@ -3,10 +3,11 @@
     <solid
         android:color="@color/fitus_light_blue">
     </solid>
-    <stroke
-        android:width="0dp"
-        android:color="#424242">
-    </stroke>
+
+    <gradient
+        android:startColor="#E6ECF1"
+        android:endColor="#559CDE"
+        android:angle="90" />
     <corners
         android:topLeftRadius="0dip"
         android:topRightRadius="0dip"

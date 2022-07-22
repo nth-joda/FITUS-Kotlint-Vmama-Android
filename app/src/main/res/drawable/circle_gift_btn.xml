@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple  xmlns:android="http://schemas.android.com/apk/res/android"
+android:color="@color/cardview_dark_background">
+<item android:id="@android:id/mask">
+    <shape
+        android:shape="oval">
+        <size android:width="10dp" android:height="10dp" />
+        <stroke android:width="2dp" android:color="@color/fitus_white"/>
+    </shape>
+</item>
+
+<item android:id="@android:id/background">
+    <shape android:shape="oval">
+        <solid android:color="@color/fitus_dark_blue" />
+        <corners android:radius="50dp" />
+    </shape>
+</item>
+</ripple>
