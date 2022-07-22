@@ -44,7 +44,7 @@
                     android:layout_height="wrap_content"
                     android:layout_column="0"
                     android:layout_marginEnd="20dp"
-                    android:background="@color/fitus_dark_blue"
+                    android:background="@drawable/btn_calendar"
                     android:textAllCaps="false"
                     android:text="@string/t_n_s_n_ph_m"
                     android:textColor="#fff"
@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="20dp"
                     android:layout_column="1"
-                    android:background="@color/fitus_dark_blue"
+                    android:background="@drawable/btn_calendar"
                     android:text="@string/gi_ti_n"
                     android:textAllCaps="false"
                     android:textColor="#fff"
@@ -334,7 +334,7 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:src="@drawable/ic_cancelfitus"
-                        android:contentDescription="TODO"
+                        android:contentDescription="Back"
                         android:focusable="true" />
                 </LinearLayout>
 
@@ -346,33 +346,17 @@
                     android:paddingVertical="15dp">
 
                     <ImageView
-                        android:id="@+id/video_capture"
+                        android:id="@+id/deleteItems"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
-                        android:src="@drawable/ic_add_img"
-                        android:contentDescription="TODO"
+                        android:src="@drawable/ic_trashfitus"
+                        android:contentDescription="Delete"
                         android:focusable="true" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:elevation="2dp"
-                    android:paddingVertical="15dp">
 
-                    <ImageView
-                        android:id="@+id/edit"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="?attr/selectableItemBackgroundBorderless"
-                        android:clickable="true"
-                        android:src="@drawable/ic_editfitus"
-                        android:contentDescription="TODO"
-                        android:focusable="true" />
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -389,7 +373,7 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:src="@drawable/ic_done_round_fillfitus"
-                        android:contentDescription="TODO"
+                        android:contentDescription="Save "
                         android:focusable="true" />
                 </LinearLayout>
             </LinearLayout>
