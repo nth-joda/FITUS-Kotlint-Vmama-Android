@@ -334,7 +334,7 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:src="@drawable/ic_cancelfitus"
-                        android:contentDescription="Back"
+                        android:contentDescription="TODO"
                         android:focusable="true" />
                 </LinearLayout>
 
@@ -346,17 +346,33 @@
                     android:paddingVertical="15dp">
 
                     <ImageView
-                        android:id="@+id/deleteItems"
+                        android:id="@+id/video_capture"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
-                        android:src="@drawable/ic_trashfitus"
-                        android:contentDescription="Delete"
+                        android:src="@drawable/ic_add_img"
+                        android:contentDescription="TODO"
                         android:focusable="true" />
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:elevation="2dp"
+                    android:paddingVertical="15dp">
 
+                    <ImageView
+                        android:id="@+id/edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:src="@drawable/ic_editfitus"
+                        android:contentDescription="TODO"
+                        android:focusable="true" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -373,7 +389,7 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:src="@drawable/ic_done_round_fillfitus"
-                        android:contentDescription="Save "
+                        android:contentDescription="TODO"
                         android:focusable="true" />
                 </LinearLayout>
             </LinearLayout>

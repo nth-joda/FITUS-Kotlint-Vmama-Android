@@ -275,7 +275,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:layout_gravity="bottom"
         android:background="@color/fitus_white">
 
@@ -290,8 +290,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
-                android:elevation="2dp"
-                android:paddingVertical="15dp">
+               >
 
                 <ImageView
                     android:id="@+id/cancel"
@@ -308,8 +307,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
-                android:elevation="2dp"
-                android:paddingVertical="15dp">
+               >
 
                 <ImageView
                     android:id="@+id/done"

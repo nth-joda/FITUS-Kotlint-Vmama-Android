@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".GoodbyeActivity">
+    tools:context=".RedeemFailed">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,15 +32,15 @@
             android:layout_height="200dp"
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_marginBottom="100dp"
-            android:src="@drawable/ic_gift"
+            android:src="@drawable/ic_redeemfailed"
             tools:ignore="ContentDescription" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_marginTop="20dp"
-            android:text="Đổi quà tặng thành công!"
+            android:layout_marginTop="40dp"
+            android:text="Quà tặng đổi thất bại!"
             android:textAlignment="center"
             android:textColor="@color/fitus_white"
             android:textSize="25sp" />
