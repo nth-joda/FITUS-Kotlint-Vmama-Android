@@ -18,5 +18,9 @@ class ProfileActivity : AppCompatActivity() {
             val intent = Intent(this@ProfileActivity, ChangePassword::class.java)
             startActivity(intent)
         }
+        binding.openInfoApp.setOnClickListener {
+            val intent = Intent(this@ProfileActivity, info_app::class.java)
+            startActivity(intent)
+        }
     }
 }

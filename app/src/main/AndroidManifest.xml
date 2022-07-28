@@ -23,6 +23,9 @@
         android:theme="@style/Theme.VscannerAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".info_app"
+            android:exported="false" />
+        <activity
             android:name=".GiftDetails"
             android:exported="false" />
         <activity

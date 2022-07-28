@@ -6,6 +6,6 @@ import android.os.Bundle
 class RedeemFailed : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_redeem_failed2)
+        setContentView(R.layout.activity_redeem_failed)
     }
 }

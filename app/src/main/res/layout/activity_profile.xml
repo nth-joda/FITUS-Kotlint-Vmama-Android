@@ -83,7 +83,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="150dp"
+                        android:layout_height="100dp"
                         android:layout_marginTop="10dp"
                         android:orientation="vertical">
 
@@ -116,7 +116,7 @@
                             android:layout_width="300dp"
                             android:layout_height="40dp"
                             android:layout_gravity="center"
-                            android:layout_marginTop="20dp"
+                            android:layout_marginTop="15dp"
                             android:background="@drawable/rounded_edittext"
                             android:text=" Đổi ảnh đại diện"
                             android:textAllCaps="false"
@@ -128,16 +128,26 @@
                             android:layout_width="300dp"
                             android:layout_height="40dp"
                             android:layout_gravity="center"
-                            android:layout_marginTop="20dp"
+                            android:layout_marginTop="15dp"
                             android:background="@drawable/rounded_edittext"
                             android:text=" Đổi mật khẩu"
                             android:textAllCaps="false"
                             android:textColor="#025395"
                             android:textSize="17dp" />
 
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/open_info_app"
+                            android:layout_width="300dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="15dp"
+                            android:background="@drawable/rounded_edittext"
+                            android:text=" Thông tin phiên bản phần mềm"
+                            android:textAllCaps="false"
+                            android:textColor="#025395"
+                            android:textSize="17dp" />
+
                     </LinearLayout>
-
-
 
 
                 </LinearLayout>
@@ -151,8 +161,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="300dp"
@@ -169,7 +178,6 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
 
     <LinearLayout
