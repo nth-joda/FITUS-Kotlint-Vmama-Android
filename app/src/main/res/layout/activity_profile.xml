@@ -164,6 +164,7 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/open_login"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_login"
